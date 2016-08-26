@@ -35,19 +35,9 @@ public class Product {
 	
 	public Product(String partNumber) {
 		StringBuffer sb = new StringBuffer();
+		Service service = new Service();
 		try{
-			URL url = new URL("http://webcommqa9.cloudapp.net/wcs/resources/store/10001/productview/"+partNumber);
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("GET");
-			conn.setRequestProperty("Accept", "application/json");
-			if (conn.getResponseCode() != 200)
-				throw new RuntimeException("Failed : HTTP error code : "+ conn.getResponseCode());
-			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-			String output;
-			while ((output = br.readLine()) != null) {
-				sb.append(output);
-			}
-			conn.disconnect();
+			sb.append(service.execute("http://webcommqa9.cloudapp.net/wcs/resources/store/10001/productview/"+partNumber));
 			JSONObject productJson = new JSONObject(sb.toString());
 			JSONArray catEntryArray = new JSONArray(productJson.get("CatalogEntryView").toString());
 			JSONObject catalogEntry = new JSONObject(catEntryArray.get(0).toString());

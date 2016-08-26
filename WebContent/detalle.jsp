@@ -23,7 +23,7 @@ Product product = new Product(partNumber+"-attr");
             <li><img src="" alt="img"></li>
             <li><img src="" alt="img"></li>
         </ul>
-        <div class="big-picture"><img src="" alt="img"></div>
+        <div class="big-picture"><img src="<%=product.getThumbnail() %>" alt="img"></div>
     </div>
     <div class="description-product">
         <h1><%=product.getName()%></h1>

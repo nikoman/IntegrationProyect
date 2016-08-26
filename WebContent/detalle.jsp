@@ -12,7 +12,6 @@
 String partNumber = request.getParameter("p");
 Product product = new Product(partNumber+"-attr");
 %>
-
 <div class="details-product">
     <ul class="breadcrumb">
         <li>Productos</li>

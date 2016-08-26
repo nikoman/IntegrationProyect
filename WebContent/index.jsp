@@ -11,6 +11,7 @@
 <%
 Service service = new Service();
 StringBuffer sb =  service.getProductDetail();
+out.print(sb);
 %>
 
 <div class="details-product">

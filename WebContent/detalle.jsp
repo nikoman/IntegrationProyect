@@ -1,4 +1,4 @@
-<%@ page import="com.emergys.Service" %>
+<%@ page import="com.emergys.Product" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,9 +9,8 @@
 </head>
 <body>
 <%
-Service service = new Service();
-StringBuffer sb =  service.getProductDetail();
-out.print(sb);
+String partNumber = request.getParameter("p");
+Product product = new Product(partNumber+"-attr");
 %>
 
 <div class="details-product">
@@ -28,10 +27,10 @@ out.print(sb);
         <div class="big-picture"><img src="" alt="img"></div>
     </div>
     <div class="description-product">
-        <h1>Nombre del producto</h1>
-        <strong>Descripción larga akjsnd kja ndkjankjdnakjndasd asd asdasd</strong>
-        <div class="cost">$100,000.00</div>
-        <div class="features">nas kfjnjsad nflkndsaf kjndskjansf lkjsnf kjadskf jnasknkjsad nfkjsan fasdf{ñlmsad lfk añlsd fklsdak jnflkjnsa kjdn}sdf  jskf nlksajdlkajs lfja nfkjfnsa k kdsajnfkjsa fnsakjfdnskdfkas djfkjsdf nkndsfjnksadn fkasjdnfksajnfka kja ndskja sndkfjnsad kjdsakfj nasdjf nlk</div>
+        <h1><%=product.getName()%></h1>
+        <strong><%=product.getShortDescription()%></strong>
+        <div class="cost">$ <%=product.getPrice()%></div>
+        <div class="features"><%=product.getLongDescription()%></div>
         <ul class="options-product">
             <li>Instructivo</li>
             <li>Lista de precios</li>
@@ -51,8 +50,5 @@ out.print(sb);
         <li>Atributo 4</li>
     </ul>
 </div>
-
-
-
 </body>
 </html>

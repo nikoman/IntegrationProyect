@@ -7,7 +7,7 @@ body {
   overflow: auto;
   position: relative; }
 
-/* Contacto */
+/* detalle */
 .breadcrumb {
   float: left;
   list-style: outside none none;
@@ -100,3 +100,20 @@ body {
     float: left;
     padding: 8px 16px;
     width: 50%; }
+
+/* productos */
+.list-cat {
+  float: left;
+  list-style: outside none none;
+  margin: 0 20px 0 0;
+  padding: 0;
+  width: 200px; }
+  .list-cat span {
+    background-color: #4f4f4f;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    padding: 4px 16px;
+    width: 100%; }

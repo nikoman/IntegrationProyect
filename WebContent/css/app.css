@@ -117,3 +117,24 @@ body {
     font-weight: bold;
     padding: 4px 16px;
     width: 100%; }
+
+.products .description-product {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 220px); }
+  .products .description-product .product {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 16px;
+    width: 33.3333%; }
+    .products .description-product .product > img {
+      border: 1px solid #333;
+      box-sizing: border-box;
+      display: inline-block;
+      height: 280px;
+      width: 100%; }
+    .products .description-product .product > .product-name {
+      font-size: 20px; }
+    .products .description-product .product .cost {
+      font-size: 20px; }

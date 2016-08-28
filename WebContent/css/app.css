@@ -1,0 +1,168 @@
+body {
+  font-family: 'Titillium Web', sans-serif; }
+
+.main-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  overflow: auto;
+  position: relative; }
+
+/* detalle */
+.breadcrumb {
+  float: left;
+  list-style: outside none none;
+  margin: 0 0 16px;
+  padding: 0;
+  width: 100%; }
+  .breadcrumb > li {
+    display: inline-block; }
+    .breadcrumb > li:first-child::before {
+      display: none; }
+    .breadcrumb > li::before {
+      content: ">";
+      display: inline-block;
+      padding: 0 10px; }
+
+.images-product {
+  box-sizing: border-box;
+  float: left;
+  padding: 0 40px 0 0;
+  width: 50%; }
+  .images-product .list-images {
+    float: left;
+    list-style: outside none none;
+    margin: 0 10px 0 0;
+    padding: 0;
+    width: 80px; }
+    .images-product .list-images > li {
+      border: 1px solid #333;
+      box-sizing: border-box;
+      height: 80px;
+      margin-bottom: 10px;
+      width: 80px; }
+  .images-product .big-picture {
+    float: left;
+    height: 480px;
+    width: calc(100% - 90px); }
+    .images-product .big-picture > img {
+      border: 1px solid #333;
+      box-sizing: border-box;
+      display: inline-block;
+      float: left;
+      height: 100%;
+      width: 100%; }
+
+.description-product {
+  float: left;
+  width: 50%; }
+  .description-product h1 {
+    font-size: 30px;
+    margin: 0 0 16px; }
+  .description-product > strong {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: lighter;
+    margin-bottom: 16px; }
+  .description-product .cost {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px; }
+  .description-product .options-product {
+    list-style: outside none none;
+    margin: 16px 0;
+    padding: 0; }
+    .description-product .options-product > li {
+      display: inline-block;
+      margin-left: -4px;
+      text-align: center;
+      width: 25%; }
+  .description-product .share-product {
+    list-style: outside none none;
+    margin: 40px 0 16px;
+    padding: 0; }
+    .description-product .share-product > li {
+      display: inline-block;
+      margin-right: 16px; }
+
+.features-list {
+  border: 1px solid #ececec;
+  box-sizing: border-box;
+  float: left;
+  list-style: outside none none;
+  margin: 40px 0;
+  padding: 0;
+  width: 100%; }
+  .features-list > li {
+    border-color: #ececec;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    box-sizing: border-box;
+    float: left;
+    padding: 8px 16px;
+    width: 50%; }
+
+/* productos */
+.list-cat {
+  float: left;
+  list-style: outside none none;
+  margin: 0 20px 0 0;
+  padding: 0;
+  width: 200px; }
+  .list-cat span {
+    background-color: #4f4f4f;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    padding: 4px 16px;
+    width: 100%; }
+
+.products .description-product {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 220px); }
+  .products .description-product .product {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 16px;
+    width: 33.3333%; }
+    .products .description-product .product > img {
+      border: 1px solid #333;
+      box-sizing: border-box;
+      display: inline-block;
+      height: 280px;
+      width: 100%; }
+    .products .description-product .product > .product-name {
+      font-size: 20px; }
+    .products .description-product .product .cost {
+      font-size: 20px; }
+
+/* categorias */
+.col-12 {
+  box-sizing: border-box;
+  float: left;
+  padding: 0;
+  width: 100%; }
+  .col-12 .col-4 {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 16px;
+    width: 25%; }
+    .col-12 .col-4 > ul {
+      list-style: outside none none;
+      margin: 0 0 16px;
+      padding: 0; }
+      .col-12 .col-4 > ul > li {
+        margin-bottom: 16px; }
+        .col-12 .col-4 > ul > li > span {
+          border-bottom: 1px solid #333;
+          box-sizing: border-box;
+          display: inline-block;
+          margin-bottom: 16px;
+          padding: 4px 8px 16px;
+          width: 100%; }
+        .col-12 .col-4 > ul > li > ul {
+          list-style: outside none none;
+          padding: 0 16px; }

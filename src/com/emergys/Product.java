@@ -15,10 +15,8 @@
  */
 package com.emergys;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -32,12 +30,13 @@ public class Product {
 	String partNumber;
 	String shortDescription;
 	String longDescription;
+	List<String> attributes;
 	
 	public Product(String partNumber) {
 		StringBuffer sb = new StringBuffer();
 		Service service = new Service();
 		try{
-			sb.append(service.execute("http://webcommqa9.cloudapp.net/wcs/resources/store/10001/productview/"+partNumber));
+			sb.append(service.execute(Service.URL+"productview/"+partNumber));
 			JSONObject productJson = new JSONObject(sb.toString());
 			JSONArray catEntryArray = new JSONArray(productJson.get("CatalogEntryView").toString());
 			JSONObject catalogEntry = new JSONObject(catEntryArray.get(0).toString());
@@ -49,6 +48,15 @@ public class Product {
 			JSONArray priceArray = new JSONArray(catalogEntry.get("Price").toString());
 			JSONObject price = new JSONObject(priceArray.get(0).toString());
 			this.setPrice(Float.parseFloat(price.getString("priceValue").toString()));
+			List<String> attrList = new ArrayList<String>();
+			JSONArray attributesArray = new JSONArray(catalogEntry.get("Attributes").toString());
+			for(int i = 0;i<attributesArray.length();i++){
+				JSONObject attrObject = attributesArray.getJSONObject(i);
+				JSONArray attributesArrayVales = new JSONArray(attrObject.get("Values").toString());
+				JSONObject attr = new JSONObject(attributesArrayVales.get(0).toString());
+				attrList.add(attr.get("values").toString());
+			}
+			this.setAttributes(attrList);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -108,5 +116,13 @@ public class Product {
 
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
+	}
+
+	public List<String> getAttributes() {
+		return attributes;
+	}
+
+	public void setAttributes(List<String> attributes) {
+		this.attributes = attributes;
 	}
 }

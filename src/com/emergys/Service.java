@@ -16,6 +16,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Service {
+	
+	public static final String URL = "http://webcommqa9.cloudapp.net/wcs/resources/store/10001/";
+	
 	public String execute(String urlService) throws Exception{
 		StringBuffer sb = new StringBuffer();
 		URL url = new URL(urlService);

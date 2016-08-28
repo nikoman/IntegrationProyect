@@ -138,3 +138,31 @@ body {
       font-size: 20px; }
     .products .description-product .product .cost {
       font-size: 20px; }
+
+/* categorias */
+.col-12 {
+  box-sizing: border-box;
+  float: left;
+  padding: 0;
+  width: 100%; }
+  .col-12 .col-4 {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 16px;
+    width: 25%; }
+    .col-12 .col-4 > ul {
+      list-style: outside none none;
+      margin: 0 0 16px;
+      padding: 0; }
+      .col-12 .col-4 > ul > li {
+        margin-bottom: 16px; }
+        .col-12 .col-4 > ul > li > span {
+          border-bottom: 1px solid #333;
+          box-sizing: border-box;
+          display: inline-block;
+          margin-bottom: 16px;
+          padding: 4px 8px 16px;
+          width: 100%; }
+        .col-12 .col-4 > ul > li > ul {
+          list-style: outside none none;
+          padding: 0 16px; }

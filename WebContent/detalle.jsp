@@ -5,7 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Urrea</title>
+<link rel="stylesheet" href="css/app.css">
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <body>
 <%
@@ -16,7 +19,7 @@ Product product = new Product(partNumber+"-attr");
     <ul class="breadcrumb">
         <li>Productos</li>
         <li>Urrea</li>
-        <li>Categoría</li>
+        <li>Categorï¿½a</li>
     </ul>
     <div class="images-product">
         <ul class="list-images">
@@ -33,7 +36,7 @@ Product product = new Product(partNumber+"-attr");
         <ul class="options-product">
             <li>Instructivo</li>
             <li>Lista de precios</li>
-            <li>Ficha técnica</li>
+            <li>Ficha tï¿½cnica</li>
             <li>Ver video</li>
         </ul>
         <ul class="share-product">

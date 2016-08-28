@@ -11,7 +11,8 @@ public class Categoria {
 	
 
 	public Categoria(){
-		categorias = new Vector<InnerCategory>();
+		//categorias = new Vector<InnerCategory>();
+		subCategorias= new Vector<InnerCategory>();
 		getCategories();
 	}
 	
@@ -39,24 +40,26 @@ public class Categoria {
 		}
 	}
 	public void getSubCategorias(String parentCategory){
-		subCategorias= new Vector<InnerCategory>();
+		//subCategorias.removeAllElements();
+		categorias = new Vector<InnerCategory>();
 		StringBuffer sb = new StringBuffer();
 		Service service = new Service();
-		try{System.out.println("consumiendo este servicio..."+"http://webcommqa9.cloudapp.net/wcs/resources/store/10001/categoryview/byParentCategory/"+parentCategory+"?pageNumber=1&pageSize=10&responseFormat=json");
+		try{
+			System.out.println("consumiendo este servicio..."+"http://webcommqa9.cloudapp.net/wcs/resources/store/10001/categoryview/byParentCategory/"+parentCategory+"?pageNumber=1&pageSize=10&responseFormat=json");
 			sb.append(service.execute("http://webcommqa9.cloudapp.net/wcs/resources/store/10001/categoryview/byParentCategory/"+parentCategory+"?pageNumber=1&pageSize=10&responseFormat=json"));
 			JSONObject productJson = new JSONObject(sb.toString());
 			JSONArray catEntryArray = new JSONArray(productJson.get("CatalogGroupView").toString());
 			int totalCategories = catEntryArray.length();
 			for (int i = 0; i<totalCategories;i++){
 				JSONObject catalogEntry = new JSONObject(catEntryArray.get(i).toString());
-				String paretns =catalogEntry.get("parentCatalogGroupID").toString();
+				//String paretns =catalogEntry.get("parentCatalogGroupID").toString();
 				
 				subCategorias.add(new InnerCategory(catalogEntry.getString("uniqueID"), catalogEntry.getString("name"), catalogEntry.getString("shortDescription"),""));
 			}
 			
 		}catch (Exception e) {
 			subCategorias.add(new InnerCategory("-1","Sin SubCategorias", "",""));
-			//e.printStackTrace();
+			e.printStackTrace();
 		}
 	}
      public static void main(String a){}

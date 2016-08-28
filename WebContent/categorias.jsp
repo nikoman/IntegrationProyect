@@ -1,32 +1,18 @@
 <%@ page import="com.emergys.Categoria" %>
 <%@ page import="com.emergys.InnerCategory" %>
 
-<%
-Categoria c = new Categoria();
- %>
- <jsp:useBean id="c2" class="com.emergys.Categoria" scope="application"/> 
-
 <div class="col-12" id="urrea">
  
-    <%
-     c2 = new Categoria(); 
-     InnerCategory[]  categos= null;
-     c2.categorias.copyInto(categos); %>
-    <% for (int i =0;i<categos.length;i++){
-    		InnerCategory catego = categos[i];
-    		c2.getSubCategorias(catego.getId());
-    		InnerCategory[] subCategos=null;
-    		c2.subCategorias.copyInto(subCategos);
-     %>
+    <% Categoria c2 = new Categoria();   %>
+    <% for (int i =0;i<c2.categorias.size();i++){
+    		c2.getSubCategorias(c2.categorias.get(i).getId());
+    %>
    <div class="col-4">
        <ul>
-      <li> <%= catego.getName()%>>
+      <li> <%= c2.categorias.get(i).getName() %>
         <ul>
-        <%for (int j=0;j<subCategos.length;j++) {
-        InnerCategory subCatego = subCategos[j] ;
-        
-        %>
-        	  <li><%subCatego.getName(); %></li>
+        <%for (int j=0;j<c2.subCategorias.size();j++) { %>
+        	  <li><%=c2.subCategorias.get(j).getName() %></li>
         <%} %>
         </ul>
       </li>

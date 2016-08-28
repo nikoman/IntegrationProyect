@@ -5,6 +5,7 @@
  
     <% Categoria c2 = new Categoria();   %>
     <% for (int i =0;i<c2.categorias.size();i++){
+            c2.subCategorias.removeAllElements();
     		c2.getSubCategorias(c2.categorias.get(i).getId());
     %>
    <div class="col-4">

@@ -5,7 +5,7 @@
     <li>Categoría</li>
   </ul>
   <ul class="list-cat">
-    <li>Urrea
+    <li> <span>Urrea</span>
       <ul>
         <li>Cat 1</li>
         <li>Cat 1</li>
@@ -13,7 +13,7 @@
         <li>Cat 1</li>
       </ul>
     </li>
-    <li>Surtek
+    <li> <span>Surtek</span>
       <ul>
         <li>Cat 1</li>
         <li>Cat 1</li>
@@ -21,7 +21,7 @@
         <li>Cat 1</li>
       </ul>
     </li>
-    <li>Lock
+    <li> <span>Lock</span>
       <ul>
         <li>Cat 1</li>
         <li>Cat 1</li>
